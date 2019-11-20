@@ -1,4 +1,5 @@
-FROM hyperized/alpine as trigger
+FROM hyperized/scratch:latest as trigger
+# Used to trigger Docker hubs auto build, which it wont do on the official images
 
 FROM openjdk:8-alpine as builder
 
