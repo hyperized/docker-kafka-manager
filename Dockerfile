@@ -1,3 +1,5 @@
+FROM hyperized/alpine as trigger
+
 FROM openjdk:8-alpine as builder
 
 ENV branch "2.0.0.2"
@@ -27,6 +29,3 @@ COPY --from=builder /kafka-manager/target/universal/kafka-manager /kafka-manager
 WORKDIR /kafka-manager/bin
 
 ENTRYPOINT ["./kafka-manager"]
-
-
-
